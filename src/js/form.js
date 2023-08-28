@@ -1,51 +1,7 @@
 import { refs } from '../js/refs';
 import throttle from 'lodash.throttle';
 import { openPopupById, alertInfo, alertError } from '../js/popup';
-
-//----------------------------------------------------------
-import axios from 'axios';
-const ORDERS_API = `${refs.dataBase}/orders/add`;
-const orderForm = document.querySelector('.form--order');
-if (orderForm) {
-  orderForm.addEventListener('submit', orderSend);
-}
-async function orderSend(e) {
-  e.preventDefault();
-  const orderForm = this;
-  const formIsValid = formValidation(orderForm);
-  if (formIsValid === true) {
-    openPopupById('loading');
-    const formData = {
-      name: orderForm.name.value,
-      phone: orderForm.phone.value,
-      email: orderForm.email.value,
-      comment: orderForm.comment.value,
-    };
-    if (orderForm.comment.value === '') {
-      delete formData.comment;
-    }
-    axios({
-      method: 'POST',
-      url: ORDERS_API,
-      data: formData,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(request => {
-        setTimeout(() => {
-          alertInfo('Order has been sent', 'Thank you for your order, <br>our manager will contact you shortly.');
-          orderForm.reset();
-        }, 500);
-      })
-      .catch(error => {
-        setTimeout(() => {
-          alertError(error.request.statusText, 'The phone must be in format +380000000000');
-        }, 500);
-      });
-  }
-}
-//----------------------------------------------------------
+// import axios from 'axios';
 
 refs.inputs.forEach(input => {
   input.addEventListener('focus', clearInput);

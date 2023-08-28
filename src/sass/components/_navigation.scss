@@ -4,7 +4,7 @@ $menu_backdrop_background: rgba(0, 0, 0, 0.4);
 $menu_font-family: 'medium', serif;
 $menu_link_color: $black_text;
 $menu_link_color_hover: $color;
-$menu_font-size: 12px;
+$menu_font-size: 14px;
 
 /*submenu*/
 $submenu_background: $white_text;
@@ -196,7 +196,7 @@ $submenu_link_background_hover: $color;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin: 0px 8px;
+      margin: 0px 14px;
       z-index: 1;
       &:first-child {
         margin-left: 0px;

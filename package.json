@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://RuslanMirasov.github.io/tastytreats",
+  "homepage": "https://RuslanMirasov.github.io/Parcel-start",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /tastytreats/"
+    "build": "parcel build src/*.html --public-url /Parcel-start/"
   },
   "repository": {
     "type": "git",
